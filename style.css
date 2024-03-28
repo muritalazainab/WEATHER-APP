@@ -72,6 +72,7 @@ body {
   text-align: center;
   margin: 40px 0;
 }
+
 .weather-box img {
   width: 40%;
 }
@@ -107,3 +108,11 @@ body {
   font-size: 22px;
   margin-left: 5px;
 }
+.error{
+  text-align: left;
+  color: red;
+  margin-top: 5px;
+  margin-left: 5px;
+  display: none;
+}
+

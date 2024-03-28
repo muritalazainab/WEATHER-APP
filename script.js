@@ -10,16 +10,21 @@ search.addEventListener("click", () => {
 
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
-  )
-    .then((response) => response.json())
+  ).then((response) => response.json())
+  
     .then((data) => {
+      if (data.cod == 404) {
+        document.querySelector(".error").style.display = "block"
+      }else{
+        document.querySelector(".error").style.display = "none"
+      }
       const image = document.querySelector(".weather-box img");
       const temperature = document.querySelector(".weather-box .temp");
       const description = document.querySelector(".weather-box .description");
       const humidity = document.querySelectorAll(".humidity p");
       const wind = document.querySelectorAll(".wind p");
 
-      // console.log(data);
+       console.log(data);
 
       switch (data.weather[0].main) {
         case "Clear":
